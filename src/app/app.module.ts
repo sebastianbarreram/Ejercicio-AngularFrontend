@@ -3,13 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-//Angular Material
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { SharedModule } from './components/shared/shared.module';
 
 //Components
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+
 
 
 @NgModule({
@@ -21,7 +20,7 @@ import { HeaderComponent } from './components/header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatToolbarModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
