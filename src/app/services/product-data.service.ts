@@ -16,9 +16,7 @@ export class ProductDataService {
 
    /** GET products. Will 404 if id not found */
    getProducts(): Observable<Product[]> {
-    console.log("Mensaje")
     const url = PathRest.getApiProducts;
-    console.log(url)
     return this.httpClient.get<Product[]>(url).pipe(
       tap(_ => console.log(`fetched products`)),
       catchError(this.handleError<Product[]>(`error while fetch products`))
