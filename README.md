@@ -1,27 +1,37 @@
 # EjercicioAngularFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+Aplicación Frontend en donde se implementa Angular. Se trabaja con Angular Material y se crea una Fake API Rest usando json-server.
 
-## Development server
+## Enunciado
+Vamos a crear el catálogo de una tienda en línea que ofrezca una gran variedad de productos. Los artículos se obtendrán a partir de la consulta a un servicio REST (mock) que puede ejecutarse de manera simultánea en el servidor local y que obtiene los datos de un archivo JSON.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Como requerimientos del sistema, se tiene lo siguiente:
+- Se deberían tener al menos 20 artículos cargados en el archivo JSON que servirá de base de datos (para obtener datos de prueba, se puede utilizar la librería Faker.js)
+- Los atributos que debería tener cada producto son: id (número identificador único), nombre, descripción, precio, cantidad. (puede tener una imagen, pero es opcional - referencia para imagenes aleatorias: Lorem picsum)
+- Se sugiere utilizar alguna librería o componente para elementos de interfaz gráfica (ej, Angular Material, Ng-Bootstrap)
 
-## Code scaffolding
+## Configuración
+Configurar el proyecto utilizando npm:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+  npm install
+```
 
-## Build
+## Proyecto
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Servidor
+Para desplegar el servidor de manera local usar el siguiente comando:
 
-## Running unit tests
+```bash
+  ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para desplegar el servidor Fake API Rest usar el siguiente comando:
 
-## Running end-to-end tests
+```bash
+  npm run server
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Desde el navegador de preferencia ingresar a la url `http://localhost:4200/`.
+La aplicación automáticamente se recargará si se realiza algún cambio en los archivos fuente.
