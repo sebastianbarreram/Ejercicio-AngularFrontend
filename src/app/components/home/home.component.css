@@ -1,12 +1,23 @@
-.example-card {
-    max-width: 400px;
+.card {
+    width: 80%;
     padding: 16px;
     height: 650px;
-    float: left;
     display: flex;
+    margin: auto
   }
 
   #buy-button {
     bottom: 30px;
     position: absolute;
+}
+
+img{
+  max-width: 400px;
+}
+.container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8px;
+  grid-auto-rows: auto;
+  margin: auto;
 }
