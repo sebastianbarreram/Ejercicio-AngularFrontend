@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 export interface Tile {
   color: string;
@@ -16,14 +18,12 @@ export interface Tile {
 export class LoginComponent implements OnInit {
   hide = true;
 
-  @Output() submitEM = new EventEmitter();
-
   form: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
   });
 
-  constructor() {}
+  constructor(private snackBar: MatSnackBar, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
 
   submit() {
     if (this.form.valid) {
-      this.submitEM.emit(this.form.value);
       console.log('Formulario valido');
       if (
         this.form.get('email')?.value === 's@s.com' &&
@@ -51,6 +50,16 @@ export class LoginComponent implements OnInit {
       ) {
         console.log(this.form.get('email')?.value);
         console.log(this.form.get('password')?.value);
+        this.snackBar.open(`Bienvenido ${this.form.get('email')?.value}`, '', {
+          verticalPosition: 'top',
+          panelClass: ['mat-toolbar', 'mat-accent'],
+        });
+        this.router.navigate(["/"])
+      } else {
+        this.snackBar.open('Usuario o contraseña inválido', '', {
+          verticalPosition: 'top',
+          panelClass: ['mat-toolbar', 'mat-warn'],
+        });
       }
     }
   }

@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [],
@@ -23,6 +24,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatInputModule,
     MatIconModule,
     MatGridListModule,
+    MatSnackBarModule,
   ],
   exports: [
     MatToolbarModule,
@@ -33,6 +35,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatInputModule,
     MatIconModule,
     MatGridListModule,
+    MatSnackBarModule,
   ],
 })
 export class SharedModule {}
