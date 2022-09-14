@@ -1,5 +1,5 @@
 .card {
-    width: 17rem;
+    width: 17vw;
     padding: 16px;
     height: 36rem;
     display: flex;
@@ -18,8 +18,9 @@ img{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
-  width: 100%;  
+  width: 90vw;  
   align-items: center;
+  margin: auto;
 }
 .center {
   display: flex;

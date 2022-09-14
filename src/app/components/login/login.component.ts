@@ -44,8 +44,14 @@ export class LoginComponent implements OnInit {
   submit() {
     if (this.form.valid) {
       this.submitEM.emit(this.form.value);
-      console.log("Formulario valido");
-      
+      console.log('Formulario valido');
+      if (
+        this.form.get('email')?.value === 's@s.com' &&
+        this.form.get('password')?.value === 'ssssss'
+      ) {
+        console.log(this.form.get('email')?.value);
+        console.log(this.form.get('password')?.value);
+      }
     }
   }
 }

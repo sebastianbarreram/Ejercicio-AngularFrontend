@@ -41,7 +41,6 @@ export class HomeComponent implements OnInit {
     this.productsSlice = this.products.slice(starIndex, endIndex);
     window.scroll({
       top: 0,
-      left: 0,
       behavior: 'smooth',
     });
   }
