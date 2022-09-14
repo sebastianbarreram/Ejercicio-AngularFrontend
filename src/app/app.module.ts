@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,13 +20,15 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent
   ],
   imports: [
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
