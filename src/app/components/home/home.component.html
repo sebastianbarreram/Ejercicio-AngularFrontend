@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card" *ngFor="let product of products">
+  <div class="card grid-item" *ngFor="let product of products">
     <mat-card>
       <mat-card-header>
         <mat-card-title>{{product.name}}</mat-card-title>
@@ -15,5 +15,6 @@
         <button mat-button color="primary" id="buy-button">Buy Product</button>
       </mat-card-actions>
     </mat-card>
+
   </div>
 </div>
