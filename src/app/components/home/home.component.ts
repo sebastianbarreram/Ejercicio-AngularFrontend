@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 import { ProductDataService } from 'src/app/services/product-data.service';
 import { Product } from 'src/assets/models/product';
 
@@ -19,7 +20,10 @@ export class HomeComponent implements OnInit {
   // MatPaginator Output
   pageEvent: PageEvent | undefined;
 
-  constructor(private productDataService: ProductDataService) {
+  constructor(
+    private productDataService: ProductDataService,
+    private router: Router
+  ) {
     this.getProducts();
   }
 
@@ -32,7 +36,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onPageChange(event: PageEvent) {
+  onPageChange(event: PageEvent): void {
     const starIndex = event.pageIndex * event.pageSize;
     let endIndex = starIndex + event.pageSize;
     if (endIndex > this.products.length) {
@@ -43,5 +47,8 @@ export class HomeComponent implements OnInit {
       top: 0,
       behavior: 'smooth',
     });
+  }
+  onClickProduct(id: number): void {
+    this.router.navigate([`/product/${id}`]);
   }
 }

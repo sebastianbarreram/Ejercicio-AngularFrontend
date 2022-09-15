@@ -22,6 +22,17 @@ export class ProductDataService {
       catchError(this.handleError<Product[]>(`error while fetch products`))
     );
   }
+  
+  /** GET product by id. Will 404 if id not found */
+   getProduct(id: string): Observable<Product> {
+    const url = `${PathRest.getApiProducts}/${id}`;
+    return this.httpClient.get<Product>(url).pipe(
+      tap(_ => console.log(`fetched product with id: ${id}`)),
+      catchError(this.handleError<Product>(`error while fetch product with id: ${id}`))
+    );
+  }
+
+
 
   /**
    * Handle Http operation that failed.

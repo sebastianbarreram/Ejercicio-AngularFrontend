@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card grid-item" *ngFor="let product of productsSlice">
+  <div class="card grid-item" *ngFor="let product of productsSlice" style="cursor: pointer;" (click)="onClickProduct(product.id)">
     <mat-card>
       <mat-card-header>
         <mat-card-title>{{product.name}}</mat-card-title>

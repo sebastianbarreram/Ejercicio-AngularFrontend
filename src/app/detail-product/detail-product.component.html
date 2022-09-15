@@ -1,0 +1,29 @@
+
+<div style="display:flex;margin: 10px; padding: 5vw;">
+    <div style="width: 50vw;margin: 0;">
+        <mat-card class="mat-elevation-z0">
+            <mat-card-title align="center">{{product.name}}</mat-card-title>
+            <div style="width: 25vw; margin: auto;text-align: justify; margin-top: 5vw;" align="center">
+                <mat-card-content>{{product.description}}</mat-card-content>
+            </div>
+            <div>
+                <mat-card-title style="margin-top: 2vw;" align="center">{{product.price}} USD</mat-card-title>
+            </div>
+            <mat-card-content align="center">Quantity: {{product.quantity}}</mat-card-content>
+            <mat-card-actions style="text-align:-webkit-right">
+                <a type="button" routerLink="/" align="right" >
+                    <button mat-button color="primary" id="buy-button">Back</button>
+                </a>
+                <a type="button" routerLink="/" >
+                    <button mat-button color="primary" id="buy-button">Add to cart</button>
+                </a>
+              </mat-card-actions>
+        </mat-card>
+    </div>
+    <div style="width: 50vw;margin: 0;" class="card">
+        <mat-card class="mat-elevation-z0">
+            <mat-card-title align="center"></mat-card-title>
+            <img mat-card-image src="{{product.imageUrl}}">
+        </mat-card>
+    </div>
+</div>
